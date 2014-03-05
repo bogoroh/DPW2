@@ -5,7 +5,7 @@ gname = raw_input("What's her name? ") #String
 friendname = raw_input("What is the name of your friend? ") #String
 time = int(raw_input("What time is it? (24H,Example: 1845) ")) #Number
 money = int(raw_input("How much money did you withdraw? Please fill in a whole number in dollars ")) #Number
-spent = float(raw_input("How much money did you spent at the club? (Example: 123,29 ")) #Float 
+spent = float(raw_input("How much money did you spent at the club? (Example: 123.29) ")) #Float 
 days = int(raw_input("How many days? ")) #Number
 
 if time < 1200 and time >= 600:
@@ -23,12 +23,12 @@ woke = random.randrange(1,13) #randomg numbers 1,2,3,4,5,6,7,8,9,10,11,12
 
 #Find out what food you bought
 food = ["Taco","Burrito","Steak Sandwich","Philly cheesesteak","Spaghetti"]
-foodIndex = random.randrange(0,5)#Find out what game we are playing 
-foodString = food[foodIndex] #Hold the string for the casinoGames
+foodIndex = random.randrange(0,5)#Find out what food we are eating 
+foodString = food[foodIndex] #Hold the string for the food
 
 #Checking which nightclub you go to 
-nightclubs = dict("Daytona":"Club XL","Orlando":"Vain Nightclub","Tampa":"XS Nightclub","Miami Beach":"Mansion")
-nightclub = nightclubs["Tampa"] #This will call the value
+nightclubs = {"Daytona":"Club XL","Orlando":"Vain Nightclub","Tampa":"XS Nightclub","Miami Beach":"Mansion"}
+nightclub = nightclubs["Tampa"] #This will call the value of the nightclub
 
 
 #first function calculating his new bank roll with the earnings
