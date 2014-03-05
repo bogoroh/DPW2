@@ -17,12 +17,20 @@ elif time <2400;
 else:
 	opening = "Good night"
 
-
 #
 import random
 #Find out what time you woke up
 woke = random.randrange(1,12) #randomg numbers 1,2,3,4,5,6,7,8,9,10,11,12
 
-message = '''{opening} {name}. Do you remember what happend last night? You woke up at {woke}AM. Your friend {friendname} called you to ask if you wanted to go the club.  '''
+food = ["Taco","Burrito","Steak Sandwich","Philly cheesesteak","Spaghetti"]
+import random
+foodIndex = random.randrange(0,5)#Find out what game we are playing 
+foodString = foodString[foodIndex] #Hold the string for the casinoGames
+
+#Bartender 
+bartender = {"Daytona":"Club XL","Orlando":"Vain Nightclub","Tampa":"XS Nightclub","Miami Beach":"Mansion"}
+bartenderDrink = bartender["Vanessa"] #This will call the value
+
+message = '''{opening} {name}. Do you remember what happend last night? You woke up at {woke}AM. Your friend {friendname} called you to ask if you wanted to go the club. {foodString}  '''
 messageFormatted = message.format(**locals())
 print messageFormatted
