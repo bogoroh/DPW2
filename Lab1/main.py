@@ -6,10 +6,10 @@ friendname = raw_input("What is the name of your friend?") #String
 time = int(raw_input("What time is it? (24H,Example: 1845)")) #Number
 money = int(raw_input("How much money did you withdraw? Please fill in a whole number in dollars ")) #Number
 
-currency = float(raw_input("What is the current currency of Euro to US Dollar? (Hint=1.36) ")) #Float 
+#currency = float(raw_input("What is the current currency of Euro to US Dollar? (Hint=1.36) ")) #Float 
 
-celcius = int(raw_input("What is the weather in degrees Celcius? ")) #Number
-tax = int(raw_input("How much percent do you have to pay taxes?(0-100) ")) #Number
+#celcius = int(raw_input("What is the weather in degrees Celcius? ")) #Number
+#tax = int(raw_input("How much percent do you have to pay taxes?(0-100) ")) #Number
 
 if time < 1200 && time >= 600:
     opening = "Good morning"
@@ -45,8 +45,10 @@ def place():
     bol = random.randrange(0,2)
     if bol == 1:
     	place = "her place"
+    	return place
     else:
     	place = "your place"
-message = '''{opening} {name}. Do you remember what happend last night? You woke up at {woke}AM. Your friend {friendname} called you to ask if you wanted to go the {nightclub}. So you guys went. Since you didn't have any cash you had to go to the atm and pull out some cash. You got your receipt back and now only have {bankF}$.You entered the club and was dancing with this cute girl. Since it was getting late you and her decided to buy something to eat before heading home. You both bought a {foodString}  '''
+    	return place
+message = '''{opening} {name}. Do you remember what happend last night? You woke up at {woke}AM. Your friend {friendname} called you to ask if you wanted to go the {nightclub}. So you guys went. Since you didn't have any cash you had to go to the atm and pull out some cash. You got your receipt back and now only have {bankF}$.You entered the club and was dancing with this cute girl. Since it was getting late you and her decided to buy something to eat before heading home. You both bought a {foodString} and decided to head to {place}.  '''
 messageFormatted = message.format(**locals())
 print messageFormatted
