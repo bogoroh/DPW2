@@ -33,7 +33,7 @@ nightclub = nightclubs["Tampa"] #This will call the value
 
 #first function calculating his new bank roll with the earnings
 def bankBalance(dollar):
-		balance = 6000
+		balance = 12000 /2
 		balance -= dollar
 		return balance
 bankF =  bankBalance(money)
