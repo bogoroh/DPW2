@@ -8,6 +8,7 @@ money = int(raw_input("How much money did you withdraw? Please fill in a whole n
 spent = float(raw_input("How much money did you spent at the club? (Example: 123.29) ")) #Float 
 days = int(raw_input("How many days? ")) #Number
 
+#Check if it's afternoon/morning/evening etc
 if time < 1200 and time >= 600:
     opening = "Good morning"
 elif time <1800:
@@ -15,7 +16,7 @@ elif time <1800:
 elif time <2400:
 	opening = "Good evening"
 else:
-	opening = "Good night"
+	opening = "Good night" 
 
 
 #Find out what time you woke up
