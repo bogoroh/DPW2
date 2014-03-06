@@ -55,6 +55,6 @@ lights = ["Red","Yellow","Green"]
 for light in lights:
 	tcolor = tcolor + light + ", "
 
-message = '''{opening} {name}. Do you remember what happend last night? You woke up at {woke}AM. Your friend {friendname} called you to ask if you wanted to go the {nightclub}. The traffic light hit {tcolor}so you guys went. Since you didn't have any cash you had to go to the atm and pull out some cash. You got your receipt back and now only have {bankF}$. You entered the club and started dancing with this cute girl named {gname}. After spending {spent} at the club it was getting late you and her decided to buy something to eat before heading home. and you spent ${spent}. You both bought a {foodString} and decided to head to {placeF}. After {days} days you decided to get a tattoo with her name on it. '''
+message = '''{opening} {name}. Do you remember what happend last night? You woke up at {woke}AM. Your friend {friendname} called you to ask if you wanted to go the {nightclub}. The traffic light hit {tcolor}so you guys went. Since you didn't have any cash you had to go to the atm and pull out some cash. You got your receipt back and now only have ${bankF}. You entered the club and started dancing with this cute girl named {gname}. After spending ${spent} at the club it was getting late you and her decided to buy something to eat before heading home. and you spent ${spent}. You both bought a {foodString} and decided to head to {placeF}. After {days} days you got a tattoo with her name on it. '''
 messageFormatted = message.format(**locals())
 print messageFormatted
