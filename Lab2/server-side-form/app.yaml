@@ -1,13 +1,10 @@
-application: simpleform
+application: server-side-form
 version: 1
 runtime: python27
 api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /img
-  static_dir: img
-
 - url: /css
   static_dir: css
 
