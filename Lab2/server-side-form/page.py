@@ -1,14 +1,14 @@
 class Page():
 	def __init__(self):
-		self.__header ='''<!DOCTYPE>
+		self.header ='''<!DOCTYPE>
 <html>
     <head>
-        <title>{title}</title>
+        <title>"Welcome voter!"</title>
         <link rel="stylesheet" href="css/main.css" type="text/css" />
     </head>
     <body>
        '''   
-		self.__registration = form = '''
+		self.registration = form = '''
         <form method="GET" action="">
         	<label for="fName">First name:</label> <input type="text" name="fName" id="fName" />
         	<label for="lName">Last name:</label><input type="text" name="lName" id="lName"/>
@@ -126,7 +126,7 @@ class Page():
         	
         	<input type="submit" value="submit" />
         </form>'''
-		self.__closer = '''
+		self.closer = '''
     </body>
 </html>'''
 	
