@@ -3,7 +3,7 @@ class Page():
 		self.header ='''<!DOCTYPE>
 <html>
     <head>
-        <title>"Welcome voter!"</title>
+        <title>Welcome voter!</title>
         <link rel="stylesheet" href="css/main.css" type="text/css" />
     </head>
     <body>
