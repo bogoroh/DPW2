@@ -17,7 +17,7 @@ class Page():
         	<label for="fName">First name:</label> <input type="text" name="fName" id="fName" />
         	<label for="lName">Last name:</label><input type="text" name="lName" id="lName"/>
         	<label for="bday">D.O.B:</label>
-			<select name="bday">
+			<select name="bday" id="firstselect">
 				<option value="na">Day</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -114,11 +114,11 @@ class Page():
         	
         	<label for="member">Vote for your new character(Up to 3 characters)</label>
         	
-			    <div class="form-checkbox"><input type="checkbox" name="site" id="koopa" value="koopatroop" /><label for="koopa"><img src="img/koopatroopa.png" alt="Koopa Troopa"/></label></div>
-			    <div class="form-checkbox"><input type="checkbox" name="site" id="larry" value="larry" /><label for="larry"><img src="img/larry.png" alt="Larry Troopa"  /></label></div>
-			    <div class="form-checkbox"><input type="checkbox" name="site" id="lemmy" value="lemmy" /><label for="lemmy"><img src="img/lemmy.png" alt="Lemmy Troopa"  /></label></div>
-			    <div class="form-checkbox"><input type="checkbox" name="site" id="ludwig" value="ludwig" /><label for="ludwig"><img src="img/ludwig.png" alt="Ludwig Troopa"  /></label></div>
-			    <div class="form-checkbox"><input type="checkbox" name="site" id="morton" value="morton" /><label for="morton"><img src="img/morton.png" alt="Morton Troopa"  /></label></div>
+			    <div class="form-checkbox"><input type="checkbox" name="member" id="koopa" value="koopatroop" /><label for="koopa"><img src="img/koopatroopa.png" alt="Koopa Troopa"/></label></div>
+			    <div class="form-checkbox"><input type="checkbox" name="member" id="larry" value="larry" /><label for="larry"><img src="img/larry.png" alt="Larry Troopa"  /></label></div>
+			    <div class="form-checkbox"><input type="checkbox" name="member" id="lemmy" value="lemmy" /><label for="lemmy"><img src="img/lemmy.png" alt="Lemmy Troopa"  /></label></div>
+			    <div class="form-checkbox"><input type="checkbox" name="member" id="ludwig" value="ludwig" /><label for="ludwig"><img src="img/ludwig.png" alt="Ludwig Troopa"  /></label></div>
+			    <div class="form-checkbox"><input type="checkbox" name="member" id="morton" value="morton" /><label for="morton"><img src="img/morton.png" alt="Morton Troopa"  /></label></div>
 		
 
         	
