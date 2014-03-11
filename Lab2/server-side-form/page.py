@@ -106,23 +106,14 @@ class Page():
         	
         	<label for="member">Select your members of the parlement(Up to 3 members)</label>
         	
-        	<input type="checkbox" id="mTaatgen" name="member" value="Mike Taatgen">
-        	<label for="mTaatgen">Mike Taatgen</label>
-        	
-        	<input type="checkbox" id="aKluba" name="member" value="Anthony Kluba">
-        	<label for="aKluba">Anthony Kluba</label>
-        	
-        	<input type="checkbox" id="jDoe" name="member" value="John Doe">
-        	<label for="jDoe">John Doe</label>
-        	
-        	<input type="checkbox" id="jParsey" name="member" value="Jake Parsey">
-        	<label for="jParsey">Jake Parsey</label>
-        	
-        	<input type="checkbox" id="tHaks" name="member" value="Tim Haks">
-        	<label for="tHaks">Tim Haks</label>
-        	
-        	<input type="checkbox" id="gKetil" name="member" value="Guan Ketil">
-        	<label for="gKetil">Guan Ketil</label>
+			<div id="sites">
+			    <input type="checkbox" name="site" id="koopa" value="koopatroop" /><label for="koopa"><img src="img/koopatroopa.png" alt="Koopa Troopa"/></label>
+			    <input type="checkbox" name="site" id="larry" value="larry" /><label for="larry"><img src="img/larry.png" alt="Larry Troopa"  /></label>
+			    <input type="checkbox" name="site" id="lemmy" value="lemmy" /><label for="lemmy"><img src="img/lemmy.png" alt="Lemmy Troopa"  /></label>
+			    <input type="checkbox" name="site" id="ludwig" value="ludwig" /><label for="ludwig"><img src="img/ludwig.png" alt="Ludwig Troopa"  /></label>
+			    <input type="checkbox" name="site" id="morton" value="morton" /><label for="morton"><img src="img/morton.png" alt="Morton Troopa"  /></label>
+			</div>
+
         	
         	<input type="submit" value="submit" />
         </form>'''
