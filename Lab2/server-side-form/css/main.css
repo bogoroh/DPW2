@@ -1,6 +1,6 @@
 body {
     background-color: #161241;
-    width: 960px;
+    width: 760px;
     margin: 0 auto;
     background-image: url(../img/texture.png);
     background-repeat: repeat;
@@ -9,7 +9,7 @@ body {
 header {
     margin-top: 0;
     height: 150px;
-    width: 960px;
+    width: 760px;
     background-image: url(../img/bg_header.jpg);
     background-repeat: no-repeat;
 }
