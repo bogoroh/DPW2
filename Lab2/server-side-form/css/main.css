@@ -1,5 +1,19 @@
 body {
-	background-color:#3E3E3E;
+	background-color:#161241;
+	width: 960px;
+    margin: 0 auto;
 	background-image: url(../img/texture.png);
 	background-repeat:repeat;
+}
+
+header{
+    margin-top:0;
+    height: 250px;
+    width:960px;
+    background-image: url(../img/bg_header.jpg);
+    background-repeat: no-repeat;
+}
+header h1 {
+    text-indent: -9999px;
+    margin:0;
 }

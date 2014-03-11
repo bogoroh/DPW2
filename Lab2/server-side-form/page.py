@@ -7,8 +7,12 @@ class Page():
         <link rel="stylesheet" href="css/main.css" type="text/css" />
     </head>
     <body>
+    <header>
+		<h1>Super Voter"></h1>
+	</header>
        '''   
 		self.registration = form = '''
+
         <form method="GET" action="">
         	<label for="fName">First name:</label> <input type="text" name="fName" id="fName" />
         	<label for="lName">Last name:</label><input type="text" name="lName" id="lName"/>
