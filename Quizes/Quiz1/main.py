@@ -13,7 +13,7 @@ class CalcArea():
 		else: # If they are not identical
 			print "The area of your rectangle is " + area + " square feet."
 
-	area = calcArea(40,20)
+	area = calcArea(40,20) #calls out the function calcArea
 
 def countDown (b):
 	bottles = int(b)
@@ -26,4 +26,4 @@ def countDown (b):
 			print "1 Bottle of beer on the wall, 1 Bottle of beer." +  "Bottles of Beer.. take one down and pass it around. Now you are out of beer and gotta call the cab"
 			print "ARGHHH, I'mz a pirate that needs more beer"		
 
-countDown(100)
+countDown(100) #call out to the function
