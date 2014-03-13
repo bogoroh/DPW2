@@ -1,9 +1,9 @@
 body {
-margin: 0 auto;
-width:960px;
-font-family: Verdana,  Helvetica, sans-serif;
-font-size: 14px;
-background: #FFFFEE;
+	margin: 0 auto;
+	width:960px;
+	font-family: Verdana,  Helvetica, sans-serif;
+	font-size: 14px;
+	background: #FFFFEE;
 }
 
 progress {
