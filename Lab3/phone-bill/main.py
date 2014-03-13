@@ -7,7 +7,7 @@ import webapp2
 from page import Page
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
+	def get(self):
 		page = Page() # creates an instance of the Page function which is defined at library.py
 
 		mike = Person(5555) # Password for his/her voicemail
@@ -45,34 +45,34 @@ class MainHandler(webapp2.RequestHandler):
 		self.response.write(page.header()) # Creates the HTML attributes
 		self.response.write(page.form())
 		if self.request.GET:
-			player = (int(self.request.GET['person']))-1 #because index start at 0 
+			player = int(self.request.GET['person'])-1 #because index start at 0 
 			self.response.write(self.html(players[player]))
 		self.response.write(page.footer())
 
-		def html(self,player):
-			total = (player.text * .25) + (player.minutes * 0.04) + (player.internet * 8.5)
-			code = '''
-			<h1>{player.name}</h1>
+	def html(self,player):
+		total = (player.text * .25) + (player.minutes * 0.04) + (player.internet * 8.5)
+		code = '''
+		<h1>{player.name}</h1>
+		<div>
 			<div>
-				<div>
-					<h2>Amount of texts</h2>
-					<span>{player.text} Texts</span>
-				</div>
-				<div>
-					<h2>Amount of minutes talked</h2>
-					<span>{player.minutes} Minutes</span>
-				</div>
-				<div>
-					<h2>Amount of GB used for data</h2>
-					<span>{player.internet} GB</span>
-				</div>
-				<div>
-					<h2>Monthly fee</h2>
-					<span>{total}$</span>
-				</div>
-			</div>'''	
-			code = code.format(**locals())
-			return code		
+				<h2>Amount of texts</h2>
+				<span>{player.text} Texts</span>
+			</div>
+			<div>
+				<h2>Amount of minutes talked</h2>
+				<span>{player.minutes} Minutes</span>
+			</div>
+			<div>
+				<h2>Amount of GB used for data</h2>
+				<span>{player.internet} GB</span>
+			</div>
+			<div>
+				<h2>Monthly fee</h2>
+				<span>{total}$</span>
+			</div>
+		</div>'''	
+		code = code.format(**locals())
+		return code		
 class Person(object):
 	def __init__(self,pin):
 		self.name = ""
