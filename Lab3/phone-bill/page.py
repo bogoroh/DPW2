@@ -17,14 +17,14 @@ class Page():
 		self.__footer = '''
 
 '''
-	@property
-    def header(self):
-        return self.__header
+		@property
+		def header(self):
+		    return self.__header
 
-    @property
-    def form(self):
-        return self.__form
+		@property
+		def form(self):
+		    return self.__form
 
-    @property
-    def footer(self):
-        return self.__footer
+		@property
+		def footer(self):
+		    return self.__footer
