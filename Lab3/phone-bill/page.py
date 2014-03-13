@@ -24,14 +24,14 @@ class Page():
 </body>
 
 '''
-		@property
-		def header(self):
-		    return self.__header
+		
+	def header(self):
+	    return self.__header
 
-		@property
-		def form(self):
-		    return self.__form
+	
+	def form(self):
+	    return self.__form
 
-		@property
-		def footer(self):
-		    return self.__footer
+	
+	def footer(self):
+	    return self.__footer

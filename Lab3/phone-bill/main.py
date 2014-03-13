@@ -42,12 +42,12 @@ class MainHandler(webapp2.RequestHandler):
 
 		players = [mike,anthony,nate,jairo,rebecca]	#array with all the players
 
-		self.response.write(page.head) # Creates the HTML attributes
-		self.response.write(page.form)
+		self.response.write(page.header()) # Creates the HTML attributes
+		self.response.write(page.form())
 		if self.request.GET:
 			player = (int(self.request.GET['person']))-1 #because index start at 0 
-		self.response.write(self.html(players[player]))
-		self.response.write(page.footer)
+			self.response.write(self.html(players[player]))
+		self.response.write(page.footer())
 
 		def html(self,player):
 			total = (player.text * .25) + (player.minutes * 0.04) + (player.internet * 8.5)
@@ -73,6 +73,24 @@ class MainHandler(webapp2.RequestHandler):
 			</div>'''	
 			code = code.format(**locals())
 			return code		
+class Person(object):
+	def __init__(self,pin):
+		self.name = ""
+		self.text = 0
+		self.minutes = 0
+		self.__internet = 0
+		self.__password = pin
+		
+	#GETTER FUNCTION	
+	@property 
+	def password(self):
+		return self.__password	
+		
+	# SETTER FUNCTION	
+	#setters can do more
+	@password.setter
+	def internet(self,value):
+		self.__password = value
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
