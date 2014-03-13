@@ -20,7 +20,7 @@ class MainHandler(webapp2.RequestHandler):
 		anthony.name = "Anthony Kluba" # Name of the user
 		anthony.text = 25 #Amount of text send
 		anthony.minutes = 325 # Amount of minutes talked on the phone
-		anthony.internet = 2.2 # Amount of GB used for data
+		anthony.internet = 7.2 # Amount of GB used for data
 
 		nate = Person(1821) # Password for his/her voicemail
 		nate.name = "Nathan Dickison" # Name of the user
@@ -32,7 +32,7 @@ class MainHandler(webapp2.RequestHandler):
 		jairo.name = "Jairo Jurado" # Name of the user
 		jairo.text = 25 #Amount of text send
 		jairo.minutes = 400 # Amount of minutes talked on the phone
-		jairo.internet =  1 # Amount of GB used for data
+		jairo.internet =  6 # Amount of GB used for data
 
 		rebecca = Person(9213) # Password for his/her voicemail
 		rebecca.name = "Rebecca Carroll" # Name of the user
@@ -65,6 +65,7 @@ class MainHandler(webapp2.RequestHandler):
 			<div>
 				<h2>Amount of GB used for data</h2>
 				<span>{player.internet} GB</span>
+				<span> <progress value="{player.internet}" max="10"></progress> </span>
 			</div>
 			<div>
 				<h2>Monthly fee</h2>

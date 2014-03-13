@@ -6,6 +6,8 @@ class Page():
 <head>
 <title>Phone Calculator</title>
 <link rel="stylesheet" href="css/main.css">
+<script src="js/jquery.js" type="text/javascript"></script>  
+<script src="js/main.js" type="text/javascript"></script>  
 </head>
 <body>
 '''
