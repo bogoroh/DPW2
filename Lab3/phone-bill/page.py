@@ -14,7 +14,7 @@ class Page():
 	<form method="GET" action="" name="players" id="links">
 		<a href="/?person=1" name="person" id="Mike Taatgen">Mike Taatgen</a>
 		<a href="/?person=2" name="person" id="Anthony Kluba">Anthony Kluba</a>
-		<a href="/?person=3" name="player" id="Nathan Dickison">Nathan Dickison</a>
+		<a href="/?person=3" name="person" id="Nathan Dickison">Nathan Dickison</a>
 		<a href="/?person=4" name="person" id="Jairo Jurado">Jairo Jurado</a>
 		<a href="/?person=5" name="person" id="Rebecca Carroll">Rebecca Carroll</a>
 	</form>
