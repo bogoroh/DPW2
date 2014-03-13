@@ -1,5 +1,9 @@
-body{
-	background-color: #3E3E3E
+body {
+margin: 0 auto;
+width:960px;
+font-family: Verdana,  Helvetica, sans-serif;
+font-size: 14px;
+background: #FFFFEE;
 }
 
 progress {
@@ -9,4 +13,19 @@ progress {
 	/* Important Thing */
 	-webkit-appearance: none;
 	border: none;
+}
+
+form a {
+	color:#eff8ff;
+	text-decoration: none;
+	margin-right:5px;
+	float:left;
+	display:block;
+	padding:25px 40px;
+	background-color:#0064B4;
+}
+
+h1 {
+	padding-top:10px;
+	clear:both;
 }
