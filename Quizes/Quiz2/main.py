@@ -1,3 +1,7 @@
+# Mike Taatgen
+# DPW
+# Quiz 2
+
 class videos(object):
 	actor1 = "Ashton Kutcher"
 	actor2 = "Jessica Biel"
@@ -37,9 +41,11 @@ class soccer(object):
 	info = 	information()
 	print info
 
+	#print out the second methods
 	goallie = current_goalkeeper()
 	print goallie
-	
+
+	# Setter for goalkeeper
 	@goalkeeper.setter
 	def goalkeeper(self, value):
 	    self._goalkeeper = value
