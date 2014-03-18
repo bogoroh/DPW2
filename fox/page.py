@@ -8,6 +8,7 @@ class Page():
             <link rel='stylesheet' href='css/main.css' />
             <link href='http://fonts.googleapis.com/css?family=Averia+Sans+Libre' rel='stylesheet' type='text/css'>
             <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+            <link href="http://fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet" type="text/css">
 </head>
     <body>
     '''
@@ -21,7 +22,7 @@ class Page():
             </nav>'''
         self.__content='''
          	<div id="wrapper">
-            <h2>I am called {obj.name}</h2>
+            <h2>I am called a {obj.name}</h2>
                 <div class="col3">
                     <h3>My phylum is:</h3>
                     <p>{obj.phylum}</p>

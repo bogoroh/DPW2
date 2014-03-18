@@ -21,6 +21,7 @@ float:left;
 
 .info {
 width:100%;
+padding-top:25px;
 clear:both;
 }
 
@@ -31,10 +32,12 @@ float:right;
 
 h3 {
 color:#4477A1;
-}
+ font: 400 21px/1.2 'Sansita one', Georgia, serif;
+ margin-bottom:5px;
+ }
 
 h2 {
-color:#27445c;
+color:#32373C;
 text-shadow:1px 1px #f2f6f8;
 font-size:32px;
 text-align:center;
@@ -43,6 +46,14 @@ text-align:center;
 p {
 color:#101c26;
 font-family:'Roboto Condensed', sans-serif;
+margin-top:5px;
+}
+
+img{
+box-shadow: 10px 10px 10px 10px#ccc;
+-moz-box-shadow: 10px 10px 10px 10px #ccc;
+-webkit-box-shadow: 10px 10px 10px 10px#ccc;
+-khtml-box-shadow: 10px 10px 10px 10px #ccc;
 }
 
 #buttons {
