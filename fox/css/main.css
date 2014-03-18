@@ -1,0 +1,37 @@
+html{
+    background-image: url(http://subtlepatterns.com/patterns/witewall_3.png);
+    background-repeat:repeat;
+}
+body{
+    width: 960px;
+    margin: 0 auto;
+}
+
+#buttons {
+background: #4477a1;
+text-decoration: none;
+width:300px;
+height: 50px;
+font: bold 1em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
+display: inline-block;
+text-align: center;
+}
+
+
+#buttons span {
+	display:block;
+    width: 100px;
+    background-color: #4477a1;
+    float: left;
+    text-align:center;
+    margin-top:15px;
+ }
+
+ #buttons a {
+ 	text-decoration: none;
+ 	color:#FF9B00;
+ }
+ 
+#buttons a:hover {
+	color:#008CFF;
+}

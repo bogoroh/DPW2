@@ -10,10 +10,10 @@ class Page():
     <body>
         <div id="wrapper">'''
         self.__nav='''
-            <nav>
-                <a href='/?animal=0'><button>Red Panda</button></a>
-                <a href='/?animal=1'><button>Great Auk</button></a>
-                <a href='/?animal=2'><button>Leopard Cat</button></a>
+            <nav id="buttons">
+                <a href='/?animal=0'><span>Red Panda</span></a>
+                <a href='/?animal=1'><span>Great Auk</span></a>
+                <a href='/?animal=2'><span>Leopard Cat</span></a>
             </nav>'''
         self.__content='''
             <h1>I am called {obj.name}</h1>

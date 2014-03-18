@@ -42,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
 
 		# Leopard Cat class that gets all the attributes from the AbstractAnimals class
 		leopard_cat = Sound()
-		leopard_cat.name = "Blue Marlin"
+		leopard_cat.name = "Leopard Cat"
 		leopard_cat.phylum = "Chordata"
 		leopard_cat.cclass = "Mammalia"
 		leopard_cat.order = "Carnivora"
@@ -57,12 +57,13 @@ class MainHandler(webapp2.RequestHandler):
 
 		#Array with all the animals in it
 		animals = [red_panda,great_auk,leopard_cat]
-		
+
 		self.response.write(page.head())
+		self.response.write(page.nav())
 		if self.request.GET:
 			indexAnimal = int(self.request.GET['animal']) #Grabs the index number out of the URL on the top of the browser
 			self.response.write(page.content(animals[indexAnimal])) #fills the templating in with the index number 
-		self.response.write(page.nav()) #Buttons on the page
+		 #Buttons on the page
 		self.response.write(page.foot()) # Footer of the page. Currently blank		
 class AbstractAnimals(object): #Sets the orginal class where the smaller classes take note from
     def __init__(self):
