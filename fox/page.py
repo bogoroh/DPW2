@@ -4,16 +4,16 @@ class Page():
 <!DOCTYPE>
 <html>
     <head>
-            <title>Mike Taatgen Fox</title>
+            <title>Mike Taatgen's Fox</title>
             <link rel='stylesheet' href='css/main.css' />
 </head>
     <body>
         <div id="wrapper">'''
         self.__nav='''
             <nav>
-                <a href='/?animal=0'><button>Black Dolphins</button></a>
-                <a href='/?animal=1'><button>Leopard Shark</button></a>
-                <a href='/?animal=2'><button>Blue Marlin</button></a>
+                <a href='/?animal=0'><button>Red Panda</button></a>
+                <a href='/?animal=1'><button>Great Auk</button></a>
+                <a href='/?animal=2'><button>Leopard Cat</button></a>
             </nav>'''
         self.__content='''
             <h1>I am called {obj.name}</h1>
