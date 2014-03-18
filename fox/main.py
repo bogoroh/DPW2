@@ -53,7 +53,7 @@ class MainHandler(webapp2.RequestHandler):
 		leopard_cat.geolocation = "Prionailurus bengalensis is one of the most widespread carnivore species in Asia, and can be found throughout most of southern Asia. Prionailurus bengalensis occupies eastern Afghanistan and northern Pakistan, northern and coastal India, Myanmar, Laos, Thailand, Indonesia, Malaysia, Vietnam, Taiwan, Sumatra, Java, Bali, Borneo, Nepal, Korea, Cambodia, parts of the Philippines, and Eastern China. Prionailurus bengalensis has been divided into a number of subspecies over its range that differ in coloration, pelage, body length, and reproductive cycles."	
 		leopard_cat.sound = "Whish Whish"
 		leopard_cat	.update()
-		
+
 		#Array with all the animals in it
 		animals = [red_panda,great_auk,leopard_cat]
 
