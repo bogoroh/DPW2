@@ -7,6 +7,37 @@ body{
     margin: 0 auto;
 }
 
+h1 {
+	float:left;
+	margin-top:10px;
+	font-family: 'Averia Sans Libre', cursive;
+}
+.col3 {
+	width:50%;
+	float:left;
+}
+.info{
+	width:100%;
+	clear:both;
+}
+.image{
+	width:50%;
+	float:right;
+}
+
+h3 {
+	color:#4477A1;
+}
+
+h2{
+	color:#27445c;
+		text-shadow:1px 1px #f2f6f8;
+	font-size:32px;
+}
+p{
+	color:#101c26;
+	font-family: 'Roboto Condensed', sans-serif;
+}
 #buttons {
 background: #4477a1;
 text-decoration: none;
@@ -15,6 +46,7 @@ height: 50px;
 font: bold 1em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
 display: inline-block;
 text-align: center;
+margin-left:25px;
 }
 
 
