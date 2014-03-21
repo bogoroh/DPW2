@@ -12,6 +12,7 @@ class MainHandler(webapp2.RequestHandler):
 		print app.stable(app.version)
 		print app.compatible("MAC")
 
+#Superclass
 class Application(object):
 	def __init__(self):
 		self.__name = "Application"
@@ -38,18 +39,28 @@ class Application(object):
 	    return self._version
 
 	
-
+#Subclass #1
 class VersionControl(Application):
 	def __init__(self):
 		super(VersionControl,self).__init__()
-		pass
+		self._use = "As a collaboration or solo"
+		self._do = "Make commits, collaborate and save your commits. "
 
-
+	@property
+	def use(self):
+	    return self._use
+	
 class InstantMsg(Application):
 	def __init__(self):
 		super(InstantMsg,self).__init__()
-		pass
+		self._chat  = "By video or by messaging"
+		self._screenname = "Jerry"
+		self._do = "Send video,chat or emoticons over the net."
 
+	@property
+	def chat(self):
+	    return self._chat
+	
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
