@@ -21,7 +21,7 @@ class MainHandler(webapp2.RequestHandler):
 
 			# parse the result
 			json_doc = json.load(result)
-			self.response.write(json_doc) 
+			self.response.write(json_doc['coord']) 
 			'''
 			xmldoc = ET.parse(result)
 			root = xmldoc.getroot()
