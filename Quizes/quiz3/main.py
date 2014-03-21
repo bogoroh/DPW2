@@ -8,15 +8,28 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		self.response.write('Hello world!')
+
+		#test out our superclass
 		app = Application()
 		print app.stable(app.version)
 		print app.compatible("MAC")
+
+		#test out our subclass #1
+		sub1 = VersionControl()
+		print sub1._do
+
+
+		#test out our subclass #2
+		sub2 = InstantMsg()
+		print "This is what the InstantMsg does:"
+		print sub2._do
 
 #Superclass
 class Application(object):
 	def __init__(self):
 		self.__name = "Application"
 		self._version = 1.235
+		self._do = "An application can do everything. Let's try to get more deeper shall we?" #attribute we are going to overwrite
 
 	def stable(self,v):
 		if v > 1.0:
@@ -49,7 +62,8 @@ class VersionControl(Application):
 	@property
 	def use(self):
 	    return self._use
-	
+
+#Subclass #2
 class InstantMsg(Application):
 	def __init__(self):
 		super(InstantMsg,self).__init__()
