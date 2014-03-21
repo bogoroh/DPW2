@@ -16,6 +16,7 @@ class MainHandler(webapp2.RequestHandler):
 
 		#test out our subclass #1
 		sub1 = VersionControl()
+		print "This is what VersionControl does:"
 		print sub1._do
 
 
