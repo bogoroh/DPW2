@@ -13,7 +13,6 @@ class MainHandler(webapp2.RequestHandler):
 		form_settings = [{"name":"station","type":"text","label":"Enter your station names "},{"name":"submit","type":"submit","label":"Get departure times"}]
 		form = Form(form_settings)
 		form.update()
-		self.response.write(form.header + form.getForm + form.close)
 		if self.request.GET:
 			print "I ran"
 			#self.response.write(self.request.GET['station']) 
@@ -55,7 +54,8 @@ class MainHandler(webapp2.RequestHandler):
 			openerURL = urllib2.build_opener() #magic to load request - creates framework to get url
 			result = openerURL.open(self.__req) # gets url and puts result in "result"
 			xmldoc = minidom.parse(result) #parse through string to get XML object 
-			content = '<ul>' 
+			content = '''
+	<ul>'''
 			ARit = xmldoc.getElementsByTagName('RitNummer')
 			AVertrekTijd = xmldoc.getElementsByTagName('VertrekTijd') # Saved the departure time for that station into an array
 			AEind = xmldoc.getElementsByTagName('EindBestemming') # Saves all the final destination into an array  for that station
@@ -65,17 +65,21 @@ class MainHandler(webapp2.RequestHandler):
 
 			if ARit:
 				for l,m,n,o,p in zip(ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
-					content += "<li>"
+					content += '''
+		<li>'''
 					content += 'Trainnumber: ' + l.firstChild.nodeValue 
 					content += 'Departure Time: ' + m.firstChild.nodeValue
 					content += 'Final Destination: ' + n.firstChild.nodeValue
 					content += 'Traintype: ' + o.firstChild.nodeValue
 					content += 'Departure Railway: '  + p.firstChild.nodeValue
-					content += "</li>"
-				content += "</ul>"
-				self.response.write(content)
+					content += '</li>'
+				content += '''
+	</ul>'''
+				self.response.write(form.header + form.getForm + content + form.close)
 			else:
 				self.response.write("Please input a valid station")
+		else:
+			self.response.write(form.header + form.getForm + form.close)
 			
 
 app = webapp2.WSGIApplication([
