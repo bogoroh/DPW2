@@ -77,8 +77,8 @@ class MainHandler(webapp2.RequestHandler):
 	</ul>'''
 				self.response.write(form.header + form.getForm + content + form.close)
 			else:
-				content = "Please input a valid station"
-				self.response.write(form.header + form.getForm + content + form.close)
+				invalid = "Please input a valid station"
+				self.response.write(form.header + form.getForm + invalid + form.close)
 		else:
 			self.response.write(form.header + form.getForm + form.close)
 			
