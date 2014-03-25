@@ -1,6 +1,6 @@
 class Page(object):
 	def __init__(self):
-			self.title = "NS - Traininf"
+			self.title = "NS - Traininfo"
 			self.css = '<link rel="stylesheet" href="css/main.css" type="text/css" />'
 			self._header ='''<!DOCTYPE>
 <html>
@@ -39,7 +39,7 @@ class Form(Page):
 		for el in obj:
 			print el['name']
 			if el['type'] == "text":
-				self.__inputs += '<input type="' + el['type']  + '" placeholder="' + el['label'] +'" name="' + el['name'] + '"></input>'
+				self.__inputs += '<input type="' + el['type']  + '" placeholder="' + el['label'] +'" name="' + el['name'] + '" required="required"></input>'
 			else:
 				self.__inputs += '<input type="' + el['type']  + '" value="' + el['label']  +'" name="' + el['name'] + '"></input>'	
 		self.__formClose = "</form>"

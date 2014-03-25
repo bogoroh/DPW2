@@ -16,8 +16,25 @@ class MainHandler(webapp2.RequestHandler):
 		self.response.write(form.header + form.getForm + form.close)
 		if self.request.GET:
 			print "I ran"
-			self.response.write(self.request.GET['station']) 
-			self.__station = self.request.GET['station']
+			#self.response.write(self.request.GET['station']) 
+			self.rstation = self.request.GET['station']
+			if self.rstation == "alkmaar" or self.rstation == "Alkmaar" or self.rstation == "amr" :
+				self.__sresponse = "amr"
+			elif self.rstation == "Apeldoorn" or self.rstation == "apeldoorn" or self.rstation == "apd":
+				self.__sresponse = "apd"
+			elif self.rstation == "Breda" or self.rstation == "breda" or self.rstation == "bd":
+				self.__sresponse = "bd"
+			elif self.rstation == "Delft" or self.rstation == "delft" or self.rstation == "dt": 
+				self.__sresponse = "dt"
+			elif self.rstation == "Emmen" or self.rstation == "emmen" or self.rstation == "emn": 
+				self.__sresponse = "emn"
+			elif self.rstation == "Gouda" or self.rstation == "gouda" or self.rstation == "gd": 
+				self.__sresponse = "gd"
+			elif self.rstation == "Haarlem" or self.rstation == "haarlem" or self.rstation == "hlm": 
+				self.__sresponse = "hlm"
+			else:
+				self.__sresponse =  self.request.GET['station']
+			self.__station = self.__sresponse
 			self.__user = 'mtaatgen@live.com' #Authenticator username
 			self.__pass = "dv8kZ24iGNZwFiHdZrClS_vaNCKTz1rY5jO9GckIj-fgVEqcgpcyLA"
 
@@ -44,15 +61,20 @@ class MainHandler(webapp2.RequestHandler):
 			AEind = xmldoc.getElementsByTagName('EindBestemming') # Saves all the final destination into an array  for that station
 			ATrein = xmldoc.getElementsByTagName('TreinSoort') # Saves all the Traintypes in an array for that station
 			AVertrek = xmldoc.getElementsByTagName('VertrekSpoor') #Saves all the Departure railways for that station into an array 
-			self.response.write(AVertrek)
-			for l,m,n,o,p in zip(ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
-				content += 'Trainnumber: ' + l.firstChild.nodeValue 
-				content += 'Departure Time: ' + m.firstChild.nodeValue
-				content += 'Final Destination: ' + n.firstChild.nodeValue
-				content += 'Traintype: ' + o.firstChild.nodeValue
-				content += 'Departure Railway: '  + p.firstChild.nodeValue
-				content += "<br/>"
-			self.response.write(content)
+			#self.response.write(AVertrek)
+
+			if ARit:
+				for l,m,n,o,p in zip(ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
+					content += 'Trainnumber: ' + l.firstChild.nodeValue 
+					content += 'Departure Time: ' + m.firstChild.nodeValue
+					content += 'Final Destination: ' + n.firstChild.nodeValue
+					content += 'Traintype: ' + o.firstChild.nodeValue
+					content += 'Departure Railway: '  + p.firstChild.nodeValue
+					content += "<br/>"
+				self.response.write(content)
+			else:
+				self.response.write("Please input a valid station")
+			
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
