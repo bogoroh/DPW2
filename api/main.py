@@ -33,7 +33,7 @@ class MainHandler(webapp2.RequestHandler):
 				self.__sresponse = "hlm"
 			else:
 				self.__sresponse =  self.request.GET['station']
-				self.__station = self.__sresponse
+			self.__station = self.__sresponse
 			self.__user = 'mtaatgen@live.com' #Authenticator username
 			self.__pass = "dv8kZ24iGNZwFiHdZrClS_vaNCKTz1rY5jO9GckIj-fgVEqcgpcyLA"
 
@@ -77,7 +77,8 @@ class MainHandler(webapp2.RequestHandler):
 	</ul>'''
 				self.response.write(form.header + form.getForm + content + form.close)
 			else:
-				self.response.write("Please input a valid station")
+				content = "Please input a valid station"
+				self.response.write(form.header + form.getForm + content + form.close)
 		else:
 			self.response.write(form.header + form.getForm + form.close)
 			

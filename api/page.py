@@ -32,7 +32,7 @@ class Form(Page):
 		super(Form,self).__init__()
 		self.method = "GET"
 		self.action = ""
-		self.__formOpen = '''	<form action="{self.action}" method="{self.method}">'''
+		self.__formOpen = '''		<form action="{self.action}" method="{self.method}">'''
 
 		self.__inputs = ''
 		for el in obj:
