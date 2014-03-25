@@ -16,24 +16,24 @@ class MainHandler(webapp2.RequestHandler):
 		if self.request.GET:
 			print "I ran"
 			#self.response.write(self.request.GET['station']) 
-			self.rstation = self.request.GET['station']
-			if self.rstation == "alkmaar" or self.rstation == "Alkmaar" or self.rstation == "amr" :
+			self.rstation = self.request.GET['station'].lower()
+			if self.rstation == "alkmaar":
 				self.__sresponse = "amr"
-			elif self.rstation == "Apeldoorn" or self.rstation == "apeldoorn" or self.rstation == "apd":
+			elif self.rstation == "apeldoorn":
 				self.__sresponse = "apd"
-			elif self.rstation == "Breda" or self.rstation == "breda" or self.rstation == "bd":
+			elif self.rstation == "breda":
 				self.__sresponse = "bd"
-			elif self.rstation == "Delft" or self.rstation == "delft" or self.rstation == "dt": 
+			elif self.rstation == "delft": 
 				self.__sresponse = "dt"
-			elif self.rstation == "Emmen" or self.rstation == "emmen" or self.rstation == "emn": 
+			elif self.rstation == "emmen": 
 				self.__sresponse = "emn"
-			elif self.rstation == "Gouda" or self.rstation == "gouda" or self.rstation == "gd": 
+			elif self.rstation == "gouda": 
 				self.__sresponse = "gd"
-			elif self.rstation == "Haarlem" or self.rstation == "haarlem" or self.rstation == "hlm": 
+			elif self.rstation == "haarlem": 
 				self.__sresponse = "hlm"
 			else:
 				self.__sresponse =  self.request.GET['station']
-			self.__station = self.__sresponse
+				self.__station = self.__sresponse
 			self.__user = 'mtaatgen@live.com' #Authenticator username
 			self.__pass = "dv8kZ24iGNZwFiHdZrClS_vaNCKTz1rY5jO9GckIj-fgVEqcgpcyLA"
 
