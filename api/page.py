@@ -37,11 +37,11 @@ class Form(Page):
 
 		self.__inputs = ''
 		for el in obj:
-			print el['name']
+			#print el['name']
 			if el['type'] == "text":
-				self.__inputs += '<input type="' + el['type']  + '" placeholder="' + el['label'] +'" name="' + el['name'] + '" required="required"></input>'
+				self.__inputs += '<input type="' + el['type']  + '" placeholder="' + el['label'] +'" name="' + el['name'] + '" required="required">'
 			else:
-				self.__inputs += '<input type="' + el['type']  + '" value="' + el['label']  +'" name="' + el['name'] + '"></input>'	
+				self.__inputs += '<input type="' + el['type']  + '" value="' + el['label']  +'" name="' + el['name'] + '">'	
 		self.__formClose = "</form>"
 
 	@property
