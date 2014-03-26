@@ -9,8 +9,11 @@ class Page(object):
         {self.css}
     </head>
 <body>
+	<h1> NS - Traininfo </h1>
+	<div id="content">
 '''   
 			self.__closer = '''
+	</div>
 </body>
 </html>'''
 	
@@ -32,15 +35,17 @@ class Form(Page):
 		super(Form,self).__init__()
 		self.method = "GET"
 		self.action = ""
-		self.__formOpen = '''		<form action="{self.action}" method="{self.method}">'''
+		self.__formOpen = '''	<form action="{self.action}" method="{self.method}">'''
 
 		self.__inputs = ''
 		for el in obj:
 			#print el['name']
 			if el['type'] == "text":
-				self.__inputs += '\n \t <input type="' + el['type']  + '" placeholder="' + el['label'] +'" name="' + el['name'] + '" required="required">'
+				self.__inputs += '''
+		<input type="''' + el['type']  + '''" placeholder="''' + el['label'] +'''" name="''' + el['name'] + '''" required="required">'''
 			else:
-				self.__inputs += '\n \t <input type="' + el['type']  + '" value="' + el['label']  +'" name="' + el['name'] + '">'	
+				self.__inputs += '''
+		<input type="''' + el['type']  + '''" value="''' + el['label']  +'''" name="''' + el['name'] + '">'''	
 		self.__formClose = '''
 	</form>'''
 

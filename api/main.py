@@ -14,7 +14,6 @@ class MainHandler(webapp2.RequestHandler):
 		form = Form(form_settings)
 		form.update()
 		if self.request.GET:
-			print "I ran"
 			#self.response.write(self.request.GET['station']) 
 			self.rstation = self.request.GET['station'].lower()
 			if self.rstation == "alkmaar":
@@ -73,6 +72,16 @@ class MainHandler(webapp2.RequestHandler):
 					vday = m.firstChild.nodeValue[8:10]
 					vhour = m.firstChild.nodeValue[11:13]
 					vminute = m.firstChild.nodeValue[14:16]
+
+					if int(vhour) > 12:
+						prefix = "pm"
+						vhour = int(vhour) - 12
+					elif int(vhour) == 12:
+						prefix = "pm"
+					else:
+						prefix = "am"
+
+					
 					if amonth == "01":
 						vmonth = "January"
 					elif amonth == "02":
@@ -98,7 +107,7 @@ class MainHandler(webapp2.RequestHandler):
 					else:
 						vmonth = "December"
 
-					content += 'Departure Time: ' + vday + " " + vmonth  + " " + vyear + " at " + vhour + ":" +vminute
+					content += 'Departure Time: ' + vday + " " + vmonth  + " " + vyear + " at " + vhour + ":" +vminute +prefix
 					content += 'Final Destination: ' + n.firstChild.nodeValue
 					content += 'Traintype: ' + o.firstChild.nodeValue
 					try:
@@ -112,7 +121,8 @@ class MainHandler(webapp2.RequestHandler):
 	</ul>'''
 				self.response.write(form.header + form.getForm + content + form.close)
 			else:
-				invalid = "Please input a valid station"
+				invalid = '''
+	<h2>Please input a valid station</h2>'''
 				self.response.write(form.header + form.getForm + invalid + form.close)
 		else:
 			self.response.write(form.header + form.getForm + form.close)
