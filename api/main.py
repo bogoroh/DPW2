@@ -13,7 +13,8 @@ class MainHandler(webapp2.RequestHandler):
 		form_settings = [{"name":"station","type":"text","label":"Enter your station names "},{"name":"submit","type":"submit","label":"Get departure times"}]
 		form = Form(form_settings)
 		form.update()
-
+		self.response.write("Test")
+		self.response.write(form.header + form.getForm + form.close)
 		if self.request.GET:
 			#self.response.write(self.request.GET['station']) 
 			self.rstation = self.request.GET['station'].lower()
@@ -33,22 +34,23 @@ class MainHandler(webapp2.RequestHandler):
 				self.__sresponse = "hlm"
 			else:
 				self.__sresponse =  self.request.GET['station']
-			self.__station = self.__sresponse
-			aModel = ApiModel(self.__station)
+			station = self.__sresponse
+			aModel = ApiModel(station)
 			aView = ApiView(aModel.do())
+			self.response.write(self__do)
 			self.response.write(aView.content)
-			
+
 class ApiModel(object):
 	'''This class handles fetching,parsing and sorting data from the weather api'''
-	def __init__(self,self.__station):
+	def __init__(self,station):
 		self.__user = 'mtaatgen@live.com' #Authenticator username
 		self.__pass = "dv8kZ24iGNZwFiHdZrClS_vaNCKTz1rY5jO9GckIj-fgVEqcgpcyLA"
 		self.__url = "http://webservices.ns.nl/ns-api-avt?station=" #URL from the API
-		self.__req = urllib2.Request(self.__url + self.__station)
+		self.__req = urllib2.Request(self.__url + self.station)
 		#Creates authentication helper
 		password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
 		#Binds username and pass to url
-		password_manager.add_password(None,self.__url+self.__station,self.__user,self.__pass)
+		password_manager.add_password(None,self.__url+self.station,self.__user,self.__pass)
 		#Stores user and pass to library's authentication helper
 		auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)
 
@@ -90,8 +92,7 @@ class ApiModel(object):
 						prefix = "pm"
 					else:
 						prefix = "am"
-
-					
+				
 					if amonth == "01":
 						vmonth = "January"
 					elif amonth == "02":
