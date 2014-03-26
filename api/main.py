@@ -13,7 +13,7 @@ class MainHandler(webapp2.RequestHandler):
 		form_settings = [{"name":"station","type":"text","label":"Enter your station names "},{"name":"submit","type":"submit","label":"Get departure times"}]
 		form = Form(form_settings)
 		form.update()
-		self.response.write(form.header + form.getForm + form.close)
+		
 		if self.request.GET:
 			#self.response.write(self.__sresponse)
 			#self.response.write(self.request.GET['station']) 
@@ -36,7 +36,15 @@ class MainHandler(webapp2.RequestHandler):
 				self.__sresponse =  self.request.GET['station']
 			aModel = ApiModel(self.__sresponse)
 			aView = ApiView(aModel.do)
-			self.response.write(aView.content)
+
+			if aModel.ARit:
+				self.response.write(form.header + form.getForm + aView.content + form.close)
+			else:
+				invalid = '''
+<h2>Please input a valid station</h2>'''
+	  			self.response.write(form.header + form.getForm + invalid + form.close)
+	  	else:
+	  		self.response.write(form.header + form.getForm + form.close)
 
 class ApiModel(object):
 	'''This class handles fetching,parsing and sorting data from the weather api'''
@@ -66,14 +74,14 @@ class ApiModel(object):
 	def sort(self):
 		self.__xmldoc = minidom.parse(self.__result) #parse through string to get XML object
 		self.__do = ApiData()
-		ARit = self.__xmldoc.getElementsByTagName('RitNummer')
+		self.__ARit = self.__xmldoc.getElementsByTagName('RitNummer')
 		AVertrekTijd = self.__xmldoc.getElementsByTagName('VertrekTijd') # Saved the departure time for that station into an array
 		AEind = self.__xmldoc.getElementsByTagName('EindBestemming') # Saves all the final destination into an array  for that station
 		ATrein = self.__xmldoc.getElementsByTagName('TreinSoort') # Saves all the Traintypes in an array for that station
 		AVertrek = self.__xmldoc.getElementsByTagName('VertrekSpoor') #Saves all the Departure railways for that station into an array 		
 
-		if ARit:
-			for l,m,n,o,p in zip(ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
+		if self.__ARit:
+			for l,m,n,o,p in zip(self.__ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
 				tnv = l.firstChild.nodeValue
 				y = m.firstChild.nodeValue[:4]
 				amonth = m.firstChild.nodeValue[5:7]
@@ -129,6 +137,10 @@ class ApiModel(object):
 	@property
 	def do(self):
 		return self.__do
+
+	@property
+	def ARit(self):
+		return self.__ARit
 
 class ApiData(object):
 	''' This class holds the data taken from the api'''
