@@ -1,3 +1,29 @@
+class apiView(object):
+	def __init__(self,flist):
+		content = '''
+<ul>'''
+		for l in flist.stations:	
+			content += '''
+			<li>'''
+			content += 'Trainnumber: ' + l["tn"]
+			content += l['time']
+			content += 'Final Destination: ' + l['fdest']
+			content += 'Traintype: ' + l['ttype']
+			try:
+				content += 'Departure Railway: '  + l['drailway']
+			except:
+				content += "(railway not available)"
+
+			#content += vhour
+			content += '</li>' 
+		content += '''
+</ul>'''
+
+	@property
+	def content(self):
+		return self.__content
+
+		
 class Page(object):
 	def __init__(self):
 			self.title = "NS - Traininfo"
