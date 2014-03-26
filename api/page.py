@@ -6,7 +6,7 @@ class ApiView(object):
 			self.__content += '''
 			<li>'''
 			self.__content += 'Trainnumber: ' + l["tn"]
-			#content += l['time']
+			self.__content += l['time']
 			self.__content += 'Final Destination: ' + l['fdest']
 			self.__content += 'Traintype: ' + l['ttype']
 			try:

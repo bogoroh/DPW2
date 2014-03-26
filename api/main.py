@@ -88,8 +88,10 @@ class ApiModel(object):
 					hourv = int(vhour) - 12
 				elif int(vhour) == 12:
 					prefix = "pm"
+					hourv = int(vhour)
 				else:
 					prefix = "am"
+					hourv = int(vhour)
 			
 				if amonth == "01":
 					vmonth = "January"
@@ -118,7 +120,7 @@ class ApiModel(object):
 
 				tempDict = dict() # Creates the set of info
 				tempDict['tn'] = tnv
-				#tempDict['time'] = 'Departure Time: ' + d + " " + vmonth  + " " + y + " at " + str(hourv) + ":" + m +prefix
+				tempDict['time'] = 'Departure Time: ' + d + " " + vmonth  + " " + y + " at " + str(hourv) + ":" + m +prefix
 				tempDict['fdest'] = fd
 				tempDict['ttype'] = tt
 				tempDict['drailway'] = dr
