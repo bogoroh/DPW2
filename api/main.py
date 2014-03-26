@@ -67,12 +67,47 @@ class MainHandler(webapp2.RequestHandler):
 				for l,m,n,o,p in zip(ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
 					content += '''
 		<li>'''
-					content += 'Trainnumber: ' + l.firstChild.nodeValue 
-					content += 'Departure Time: ' + m.firstChild.nodeValue
+					content += 'Trainnumber: ' + l.firstChild.nodeValue
+					vyear = m.firstChild.nodeValue[:4]
+					amonth = m.firstChild.nodeValue[5:7]
+					vday = m.firstChild.nodeValue[8:10]
+					vhour = m.firstChild.nodeValue[11:13]
+					vminute = m.firstChild.nodeValue[14:16]
+					if amonth == "01":
+						vmonth = "January"
+					elif amonth == "02":
+						vmonth = "February"
+					elif amonth == "03":
+						vmonth = "March"
+					elif amonth == "04":
+						vmonth = "April"
+					elif amonth == "05":
+						vmonth = "May"
+					elif amonth == "06":
+						vmonth = "June"
+					elif amonth == "07":
+						vmonth = "July"
+					elif amonth == "08":
+						vmonth = "August"
+					elif amonth == "09":
+						vmonth = "September"
+					elif amonth == "10":
+						vmonth = "October"
+					elif amonth == "11":
+						vmonth = "November"
+					else:
+						vmonth = "December"
+
+					content += 'Departure Time: ' + vday + " " + vmonth  + " " + vyear + " at " + vhour + ":" +vminute
 					content += 'Final Destination: ' + n.firstChild.nodeValue
 					content += 'Traintype: ' + o.firstChild.nodeValue
-					content += 'Departure Railway: '  + p.firstChild.nodeValue
-					content += '</li>'
+					try:
+						content += 'Departure Railway: '  + p.firstChild.nodeValue
+					except:
+						content += "(railway not available)"
+					
+					#content += vhour
+					content += '</li>' 
 				content += '''
 	</ul>'''
 				self.response.write(form.header + form.getForm + content + form.close)
