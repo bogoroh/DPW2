@@ -15,7 +15,11 @@ class MainHandler(webapp2.RequestHandler):
 
         # Let's create an instance of Models
         model = Model()
-        self.response.write(model.__houses)
+
+
+        # Let's create the page
+        page = Page ()
+        self.response.write(page.header)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
