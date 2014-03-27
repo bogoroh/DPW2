@@ -34,3 +34,21 @@ class Links(object):
 	@property
 	def nav(self):
 	    return self.__nav
+
+class Info(object):
+	def __init__(self,li):
+		for i in li:
+			n = i['name']
+			s = i['sigil']
+			m = i['motto']
+			c1 = i['color1']
+			c2 = i['color2']
+			h = i['head']
+			im = i['image']
+
+			self.__content = ''' 
+			<h2> name </h2>
+			<p>''' + 
+
+
+			''' 
