@@ -1,20 +1,17 @@
 class Page(object):
 	def __init__(self):
-			self.title = "Mike Taatgen - final"
-			self.css = '<link rel="stylesheet" href="css/main.css" type="text/css" />'
-			self._header ='''<!DOCTYPE>
+		self._header ='''<!DOCTYPE>
 <html>
 	<head>
-        <title>{self.title}</title>
-        {self.css}
+        <title>Mike Taatgen - final</title>
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
 		<div id="content">
 		<header>
 		<h1> Game of Throne Songs </h1>
-		
 '''   
-			self.__closer = '''
+		self.__closer = '''
 		</div>
 	</body>
 </html>'''
@@ -26,6 +23,3 @@ class Page(object):
 	@property	
 	def close(self):
 		return self.__closer
-
-	def update(self):
-		self._header = self._header.format(**locals())
