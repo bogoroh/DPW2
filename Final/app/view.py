@@ -23,3 +23,8 @@ class Page(object):
 	@property	
 	def close(self):
 		return self.__closer
+
+class Links(object):
+	def __init__(self,li):
+		for i in li:
+			self.__content += '<a href="/?house='+i+'">'+i+'</a>'	

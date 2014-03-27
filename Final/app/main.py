@@ -17,6 +17,12 @@ class MainHandler(webapp2.RequestHandler):
 		page = Page()
 		self.response.write(page.header + str(model.houseArr) + page.close)
 
+
+		if self.request.GET {
+			#Display the correct get 
+		}
+		# Display nothing but the links
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
