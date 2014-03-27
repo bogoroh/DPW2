@@ -14,8 +14,10 @@ class MainHandler(webapp2.RequestHandler):
 		form = Form(form_settings)
 		form.update()
 		
+		# Checks to see if there is a get variable
 		if self.request.GET:
 			self.rstation = self.request.GET['station'].lower()
+			#Could've added all 204 stations here if wanted to
 			if self.rstation == "alkmaar":
 				self.__sresponse = "amr"
 			elif self.rstation == "apeldoorn":
@@ -35,13 +37,16 @@ class MainHandler(webapp2.RequestHandler):
 			aModel = ApiModel(self.__sresponse)
 			aView = ApiView(aModel.do)
 
+			#If there has been a correct response 
 			if aModel.ARit:
 				self.response.write(form.header + form.getForm + aView.content + form.close)
+			# Show invalid message
 			else:
 				invalid = '''
 			<h2>Please input a valid station</h2>'''
 	  			self.response.write(form.header + form.getForm + invalid + form.close)
 	  	else:
+	  		# Just show the form
 	  		self.response.write(form.header + form.getForm + form.close)
 
 class ApiModel(object):
@@ -72,6 +77,7 @@ class ApiModel(object):
 	def sort(self):
 		self.__xmldoc = minidom.parse(self.__result) #parse through string to get XML object
 		self.__do = ApiData()
+		# Get all the required information 
 		self.__ARit = self.__xmldoc.getElementsByTagName('RitNummer')
 		AVertrekTijd = self.__xmldoc.getElementsByTagName('VertrekTijd') # Saved the departure time for that station into an array
 		AEind = self.__xmldoc.getElementsByTagName('EindBestemming') # Saves all the final destination into an array  for that station
@@ -81,6 +87,7 @@ class ApiModel(object):
 		if self.__ARit:
 			for l,m,n,o,p in zip(self.__ARit, AVertrekTijd,AEind,ATrein,AVertrek): # Makes it possible to loop throught multiple arrays
 				tnv = l.firstChild.nodeValue
+				# Get's the year value from the 4 indexes of m.firstchildnodevalue
 				y = m.firstChild.nodeValue[:4]
 				amonth = m.firstChild.nodeValue[5:7]
 				d = m.firstChild.nodeValue[8:10]
@@ -89,16 +96,18 @@ class ApiModel(object):
 				fd = n.firstChild.nodeValue
 				tt = o.firstChild.nodeValue
 				dr = p.firstChild.nodeValue
+				#Checks to see if it's PM or AM
 				if int(vhour) > 12:
 					prefix = "pm"
 					hourv = int(vhour) - 12
+				# If it's exactly 12 pm 
 				elif int(vhour) == 12:
 					prefix = "pm"
 					hourv = int(vhour)
 				else:
 					prefix = "am"
 					hourv = int(vhour)
-			
+				# Convert the month string to a nicer string
 				if amonth == "01":
 					vmonth = "January"
 				elif amonth == "02":
@@ -127,10 +136,10 @@ class ApiModel(object):
 				tempDict = dict() # Creates the set of info
 				tempDict['tn'] = tnv
 				tempDict['time'] = 'Departure Time: ' + "<span class='timebox'>" +  d + "</span>" + " " + vmonth  + " " + y + " at " + "<span class='timebox'>" +str(hourv) + "</span>"+ ":" + "<span class='timebox'>" + m + "</span>" + "<span class='timebox'>" + prefix + "</span>"
-				tempDict['fdest'] = fd
-				tempDict['ttype'] = tt
-				tempDict['drailway'] = dr
-				self.__do.stations.append(tempDict)
+				tempDict['fdest'] = fd # Final destination 
+				tempDict['ttype'] = tt # Train Type
+				tempDict['drailway'] = dr # Destination Rail way
+				self.__do.stations.append(tempDict) # append the dict to the array so we can use it later
 
 	@property
 	def do(self):
