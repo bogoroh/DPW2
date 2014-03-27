@@ -15,8 +15,6 @@ class MainHandler(webapp2.RequestHandler):
 		form.update()
 		
 		if self.request.GET:
-			#self.response.write(self.__sresponse)
-			#self.response.write(self.request.GET['station']) 
 			self.rstation = self.request.GET['station'].lower()
 			if self.rstation == "alkmaar":
 				self.__sresponse = "amr"
@@ -41,7 +39,7 @@ class MainHandler(webapp2.RequestHandler):
 				self.response.write(form.header + form.getForm + aView.content + form.close)
 			else:
 				invalid = '''
-<h2>Please input a valid station</h2>'''
+			<h2>Please input a valid station</h2>'''
 	  			self.response.write(form.header + form.getForm + invalid + form.close)
 	  	else:
 	  		self.response.write(form.header + form.getForm + form.close)

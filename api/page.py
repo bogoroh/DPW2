@@ -1,10 +1,10 @@
 class ApiView(object):
 	def __init__(self,flist):
 		self.__content = '''
-<ul>'''
+			<ul>'''
 		for l in flist.stations:	
 			self.__content += '''
-			<li>'''
+				<li>'''
 			self.__content += 'Trainnumber: ' + l["tn"]
 			self.__content += l['time']
 			self.__content += 'Final Destination: ' + l['fdest']
@@ -17,7 +17,7 @@ class ApiView(object):
 			#content += vhour
 			self.__content += '</li>' 
 		self.__content += '''
-</ul>'''
+			</ul>'''
 
 	@property
 	def content(self):
@@ -30,17 +30,17 @@ class Page(object):
 			self.css = '<link rel="stylesheet" href="css/main.css" type="text/css" />'
 			self._header ='''<!DOCTYPE>
 <html>
-    <head>
+	<head>
         <title>{self.title}</title>
         {self.css}
-    </head>
-<body>
-	<h1> NS - Traininfo </h1>
-	<div id="content">
+	</head>
+	<body>
+		<h1> NS - Traininfo </h1>
+		<div id="content">
 '''   
 			self.__closer = '''
-	</div>
-</body>
+		</div>
+	</body>
 </html>'''
 	
 	@property
@@ -61,19 +61,19 @@ class Form(Page):
 		super(Form,self).__init__()
 		self.method = "GET"
 		self.action = ""
-		self.__formOpen = '''	<form action="{self.action}" method="{self.method}">'''
+		self.__formOpen = '''			<form action="{self.action}" method="{self.method}">'''
 
 		self.__inputs = ''
 		for el in obj:
 			#print el['name']
 			if el['type'] == "text":
 				self.__inputs += '''
-		<input type="''' + el['type']  + '''" placeholder="''' + el['label'] +'''" name="''' + el['name'] + '''" required="required">'''
+				<input type="''' + el['type']  + '''" placeholder="''' + el['label'] +'''" name="''' + el['name'] + '''" required="required">'''
 			else:
 				self.__inputs += '''
-		<input type="''' + el['type']  + '''" value="''' + el['label']  +'''" name="''' + el['name'] + '">'''	
+				<input type="''' + el['type']  + '''" value="''' + el['label']  +'''" name="''' + el['name'] + '">'''	
 		self.__formClose = '''
-	</form>'''
+			</form>'''
 
 	@property
 	def getForm(self):
