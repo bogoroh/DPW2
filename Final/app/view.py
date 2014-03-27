@@ -26,5 +26,6 @@ class Page(object):
 
 class Links(object):
 	def __init__(self,li):
+		self.__nav = ''
 		for i in li:
-			self.__content += '<a href="/?house='+i+'">'+i+'</a>'	
+			self.__nav += '<a href="/?house='+i+'">'+i+'</a>'	
