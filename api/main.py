@@ -126,7 +126,7 @@ class ApiModel(object):
 
 				tempDict = dict() # Creates the set of info
 				tempDict['tn'] = tnv
-				tempDict['time'] = 'Departure Time: ' + d + " " + vmonth  + " " + y + " at " + str(hourv) + ":" + m +prefix
+				tempDict['time'] = 'Departure Time: ' + "<span class='timebox'>" +  d + "</span>" + " " + vmonth  + " " + y + " at " + "<span class='timebox'>" +str(hourv) + "</span>"+ ":" + "<span class='timebox'>" + m + "</span>" + "<span class='timebox'>" + prefix + "</span>"
 				tempDict['fdest'] = fd
 				tempDict['ttype'] = tt
 				tempDict['drailway'] = dr
