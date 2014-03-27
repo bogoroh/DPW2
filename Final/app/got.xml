@@ -1,0 +1,56 @@
+<houses>
+	<house>
+		<name>Lannister</name>
+		<sigil>Lion</sigil>
+		<motto>Hear Me Roar</motto>
+		<color1>#FFA319</color1>
+		<color2>#800000</color2>
+		<head>Tywin Lannister</head>
+		<image>http://rebeccacarroll.com/api/got/images/lannister.jpg</image>
+	</house>
+	<house>
+		<name>Stark</name>
+		<sigil>Wolf</sigil>
+		<motto>Winter is Coming</motto>
+		<color1>#CECECE</color1>
+		<color2>#FFFFFF</color2>
+		<head>Eddard Stark</head>
+		<image>http://rebeccacarroll.com/api/got/images/stark.jpg</image>
+	</house>
+	<house>
+		<name>Baratheon</name>
+		<sigil>Stag</sigil>
+		<motto>Ours is the Fury</motto>
+		<color1>#000000</color1>
+		<color2>#FFD119</color2>
+		<head>Robert Baratheon</head>
+		<image>http://rebeccacarroll.com/api/got/images/baratheon.jpg</image>
+	</house>
+	<house>
+		<name>Greyjoy</name>
+		<sigil>Kraken</sigil>
+		<motto>We do not sow</motto>
+		<color1>#FFDF5E</color1>
+		<color2>#000000</color2>
+		<head>Balon Greyjoy</head>
+		<image>http://rebeccacarroll.com/api/got/images/greyjoy.jpg</image>
+	</house>
+	<house>
+		<name>Targaryen</name>
+		<sigil>Three-headed Dragon</sigil>
+		<motto>Fire and Blood</motto>
+		<color1>#000000</color1>
+		<color2>#800000</color2>
+		<head>Danaerys Targaryen</head>
+		<image>http://rebeccacarroll.com/api/got/images/targaryen.jpg</image>
+	</house>
+	<house>
+		<name>Tully</name>
+		<sigil>Leaping Trout</sigil>
+		<motto>Family, Duty, Honor</motto>
+		<color1>#0066CC</color1>
+		<color2>#990000</color2>
+		<head>Hoster Tully</head>
+		<image>http://rebeccacarroll.com/api/got/images/tully.jpg</image>
+	</house>
+</houses>
