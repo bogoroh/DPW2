@@ -28,4 +28,9 @@ class Links(object):
 	def __init__(self,li):
 		self.__nav = ''
 		for i in li:
-			self.__nav += '<a href="/?house='+i+'">'+i+'</a>'	
+			t = i['name']
+			self.__nav += '<a href="/?house='+t+'">'+t+'</a>'
+
+	@property
+	def nav(self):
+	    return self.__nav
