@@ -32,11 +32,11 @@ border:1px solid #eda933;
 display:inline-block;
 color:#ffffff;
 font-family:Verdana;
-font-size:15px;
+font-size:12px;
 font-weight:bold;
 font-style:normal;
-height:75px;
-line-height:75px;
+height:50px;
+line-height:50px;
 width:200px;
 text-decoration:none;
 text-align:center;
@@ -64,7 +64,6 @@ padding: 15px;
 background: rgba(255,255,255,0.5);
 margin: 0 0 10px 0;
 color:#120900;
-display:block;
 }
 
 input[type=text]:focus{
@@ -74,9 +73,12 @@ box-shadow:0 0 10px #d66f00;
 }
 
 h1 {
-float:left;
 margin-top:10px;
 font-family: 'Lustria', serif;
+}
+
+ul{
+	padding:0;
 }
 
 li {
