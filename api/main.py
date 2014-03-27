@@ -10,7 +10,7 @@ from xml.dom import minidom #convert XML into an object
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 		page = Page()
-		form_settings = [{"name":"station","type":"text","label":"Enter your station names "},{"name":"submit","type":"submit","label":"Get departure times"}]
+		form_settings = [{"name":"station","type":"text","label":"Enter your station name "},{"name":"submit","type":"submit","label":"Get departure times"}]
 		form = Form(form_settings)
 		form.update()
 		

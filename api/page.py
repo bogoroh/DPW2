@@ -33,6 +33,8 @@ class Page(object):
 	<head>
         <title>{self.title}</title>
         {self.css}
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<h1> NS - Traininfo </h1>

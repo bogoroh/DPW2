@@ -53,11 +53,18 @@ input[type=submit]:hover {
 	background:-moz-linear-gradient( center top, #d29105 5%, #f6b33d 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d29105', endColorstr='#f6b33d');
 	background-color:#d29105;
+}
+
+input[type=text]{
+	padding:15px 100px
+	
+}
+
 
 h1 {
 float:left;
 margin-top:10px;
-font-family:'Averia Sans Libre', cursive;
+font-family: 'Lustria', serif;
 }
 
 #content {
