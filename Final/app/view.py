@@ -2,7 +2,7 @@ class Page(object):
 	def __init__(self):
 			self.title = "Mike Taatgen - final"
 			self.css = '<link rel="stylesheet" href="css/main.css" type="text/css" />'
-			self.__header ='''<!DOCTYPE>
+			self._header ='''<!DOCTYPE>
 <html>
 	<head>
         <title>{self.title}</title>
@@ -21,7 +21,7 @@ class Page(object):
 	
 	@property
 	def header(self):
-		return self.__header
+		return self._header
 	
 	@property	
 	def close(self):
