@@ -4,18 +4,18 @@ class ApiView(object):
 			<ul>'''
 		for l in flist.stations:	
 			self.__content += '''
-				<li>'''
-			self.__content += 'Trainnumber: ' + l["tn"]
-			self.__content += l['time']
-			self.__content += 'Final Destination: ' + l['fdest']
-			self.__content += 'Traintype: ' + l['ttype']
+				<li><div id="info"> '''
+			self.__content += '<div id="tn">Trainnumber: ' + l["tn"] + '</div>'
+			
+			self.__content += '<div id="fd"> Final Destination: ' + l['fdest'] + '</div>'
+			self.__content += '<div id="tt"> Traintype: ' + l['ttype'] + '</div>'
 			try:
-				self.__content += 'Departure Railway: '  + l['drailway']
+				self.__content += '<div class="railway"> Departure Railway: '  + l['drailway'] + '</div>'
 			except:
-				self.__content += "(railway not available)"
-
+				self.__content += "<div class='railway'> (railway not available)" + '</div>'
+			self.__content += '<div id="time">' + l['time'] + '</div>'
 			#content += vhour
-			self.__content += '</li>' 
+			self.__content += '</div></li>' 
 		self.__content += '''
 			</ul>'''
 
