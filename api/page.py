@@ -37,8 +37,10 @@ class Page(object):
         <link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<h1> NS - Traininfo </h1>
 		<div id="content">
+		<header>
+		<h1> NS - Traininfo </h1>
+		
 '''   
 			self.__closer = '''
 		</div>
@@ -75,7 +77,7 @@ class Form(Page):
 				self.__inputs += '''
 				<input type="''' + el['type']  + '''" value="''' + el['label']  +'''" name="''' + el['name'] + '">'''	
 		self.__formClose = '''
-			</form>'''
+			</form></header>'''
 
 	@property
 	def getForm(self):
