@@ -5,12 +5,12 @@ class ApiView(object):
 		for l in flist.stations:	
 			self.__content += '''
 				<li><div id="info"> '''
-			self.__content += '<div id="tn"><h2>Trainnumber:</h2> ' + '<p>' + l["tn"] + '</p>' + '</div>'
+			self.__content += '<div id="tn"><h2>Trainnumber:</h2> ' + '<p class="tnvalue">' + l["tn"] + '</p>' + '</div>'
 			
-			self.__content += '<div id="fd"><h2> Final Destination: </h2>' + '<p>' + l['fdest'] + '</p>' + '</div>'
-			self.__content += '<div id="tt"> <h2>Traintype:</h2> ' + '<p>' + l['ttype'] + '</p>' + '</div>'
+			self.__content += '<div id="fd"><h2> Final Destination: </h2>' + '<p class="fdvalue">' + l['fdest'] + '</p>' + '</div>'
+			self.__content += '<div id="tt"> <h2>Traintype:</h2> ' + '<p class="ttvalue">' + l['ttype'] + '</p>' + '</div>'
 			try:
-				self.__content += '<div class="railway"><h2> Departure Railway: </h2>'  + '<p>' + l['drailway'] + '</p>' + '</div>'
+				self.__content += '<div class="railway"><h2> Departure Railway: </h2>'  + '<p class="drvalue">' + l['drailway'] + '</p>' + '</div>'
 			except:
 				self.__content += "<div class='railway'><p> (railway not available)</p>" + '</div>'
 			self.__content += '<div id="time">' + l['time'] + '</div>'

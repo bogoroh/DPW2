@@ -64,6 +64,7 @@ padding: 15px;
 background: rgba(255,255,255,0.5);
 margin: 0 0 10px 0;
 color:#120900;
+display:block;
 }
 
 input[type=text]:focus{
@@ -79,47 +80,60 @@ font-family: 'Lustria', serif;
 }
 
 li {
-	font-family: 'Lato', sans-serif;
-	list-style: none;
-	margin-top: 20px;
-	background-color:#bababa;
+font-family: 'Lato', sans-serif;
+list-style: none;
+margin-top: 20px;
+background-color:#bababa;
+box-shadow: 0 2px 10px rgba(15,15,15,.75);
 }
 
 h2{
-	color:#9C5100;
+color:#9C5100;
 }
 
 p{
-	color:#261400;
-	font-size: 18px;
+color:#261400;
+font-size: 18px;
 }
 #tn {
-	width: 25%;
-	float:left;
+width: 25%;
+margin-left: 20px;
+float:left;
 }
 
 #fd {
-	width: 25%;
-	float:left;
+width: 27%;
+float:left;
 }
 #tt {
-	width: 25%;
-	float:left;
+width: 20%;
+float:left;
 }
 .railway{
-	width: 25%;
-	float:left;
+width: 25%;
+float:left;
 }
 #content {
 clear:both;
 }
 
 #time{
-	clear: both;
-	color:#3a1e00;
-	font-weight:bold;
-	font-size: 21px;
-	margin-left: 230px;
+clear: both;
+color:#3a1e00;
+font-weight:bold;
+font-size: 21px;
+margin-left: 250px;
+padding-bottom: 10px;
+}
+
+.tnvalue,.fdvalue {
+margin-left: 50px;
+}
+.ttvalue {
+margin-left:30px;
+}
+.drvalue {
+margin-left: 90px;
 }
 .back_mask {
 z-index: -990;
@@ -132,5 +146,5 @@ background: url(../img/bg_mask.png);
 }
 
 .timebox{
-	background-image:url(../img/timediv.jpg);
+background-image:url(../img/timediv.jpg);
 }
