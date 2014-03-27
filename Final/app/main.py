@@ -16,7 +16,7 @@ class MainHandler(webapp2.RequestHandler):
 		# Let's create the page
 		page = Page()
 		link = Links(model.houseArr)
-		self.response.write(link.__nav)
+		self.response.write(link.nav)
 		#self.response.write(page.header + str(model.houseArr) + page.close)
 
 
