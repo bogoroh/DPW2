@@ -1,6 +1,16 @@
+html {
+background-image:url('../img/bg_image.JPG') ;
+background-repeat:no-repeat;
+-webkit-background-size: cover;  
+-moz-background-size: cover;  
+-o-background-size: cover;  
+background-size: cover;  
+}
+
 body {
 width:960px;
 margin:0 auto;
+
 }
 
 h1 {
