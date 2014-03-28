@@ -17,6 +17,7 @@ class MainHandler(webapp2.RequestHandler):
 		page = Page()
 		link = Links(model.houseArr)
 		house = self.request.get('house')
+		
 		self.response.write(house,model.houseArr)
 		#self.response.write(page.header + str(model.houseArr) + page.close)
 
