@@ -47,8 +47,8 @@ class Info(object):
 				c2 = i['color2']
 				h = i['head']
 				im = i['image']
-
-				self.__content = ''' 
+				image = n.lower()
+				self.__content = '''<div class="'''+n+'''"> 
 				<h2> Name: </h2>
 				<p>''' + n + ''' </p>
 				<h2> Sigil: </h2>
@@ -62,7 +62,7 @@ class Info(object):
 				<h2> Head : </h2>
 				<p>''' + h + ''' </p>
 				<h2> Image : </h2>
-				<img src="http://rebeccacarroll.com/api/got/images/'''+ im + '''" alt="im">'''
+				<img src="http://rebeccacarroll.com/api/got/images/'''+ image + '''.jpg" alt="''' + image + '''">'''
 	@property
 	def content(self):
 	    return self.__content
