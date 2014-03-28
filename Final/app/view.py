@@ -36,19 +36,30 @@ class Links(object):
 	    return self.__nav
 
 class Info(object):
-	def __init__(self,li):
+	#pass in the array and the house that was submitted to make content equal to that one
+	def __init__(self,house,li):
 		for i in li:
-			n = i['name']
-			s = i['sigil']
-			m = i['motto']
-			c1 = i['color1']
-			c2 = i['color2']
-			h = i['head']
-			im = i['image']
+			if house == i['name']
+				n = i['name']
+				s = i['sigil']
+				m = i['motto']
+				c1 = i['color1']
+				c2 = i['color2']
+				h = i['head']
+				im = i['image']
 
-			self.__content = ''' 
-			<h2> name </h2>
-			<p>''' + 
-
-
-			''' 
+				self.__content = ''' 
+				<h2> Name: </h2>
+				<p>''' + n + ''' </p>
+				<h2> Sigil: </h2>
+				<p>''' + s+ ''' </p>
+				<h2> Motto: </h2>
+				<p>''' + m + ''' </p>
+				<h2> Color 1: </h2>
+				<p>''' + c1 + ''' </p>
+				<h2> Color 2 : </h2>
+				<p>''' + c2 + ''' </p>
+				<h2> Head : </h2>
+				<p>''' + h + ''' </p>
+				<h2> Image : </h2>
+				<img src="http://rebeccacarroll.com/api/got/images/'''+ im + "''' alt="im">'''
