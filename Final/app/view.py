@@ -23,6 +23,7 @@ class Page(object):
 	def close(self):
 		return self.__closer
 
+#class to make the links show up on the page
 class Links(object):
 	def __init__(self,li):
 		self.__nav = '''			<nav>'''
@@ -41,7 +42,9 @@ class Info(object):
 	#pass in the array and the house that was submitted to make content equal to that one
 	def __init__(self,house,li):
 		for i in li:
+			#check to see if the GET hour matches the one in the array
 			if house == i['name']:
+				# fill the variables with the correct info from the array
 				n = i['name']
 				s = i['sigil']
 				m = i['motto']
@@ -49,6 +52,7 @@ class Info(object):
 				c2 = i['color2']
 				h = i['head']
 				im = i['image']
+				#makes the name lowercase for the url not sure if needed
 				image = n.lower()
 				self.__content = '''
 			<div class="'''+n+'''"> 
