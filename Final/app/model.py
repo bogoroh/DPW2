@@ -4,8 +4,11 @@ from xml.dom import minidom
 class Model(object):
 	def __init__(self):
 		# Parse the XML to start working with it
-		self.file = open("got.xml", 'r')
-		self.xml = minidom.parseString(self.file.read())
+		self.url = "http://rebeccacarroll.com/api/got/got.xml"
+		self.reg = urllib2.Request(self.url)
+		opener = urllib2.build_opener() #magic to load request 
+		self.result = opener.open(self.reg) # gets url and puts result in "result"
+		self.xml = minidom.parse(self.result)
 		
 		#Array that holds all the information
 		self.houseArr = []

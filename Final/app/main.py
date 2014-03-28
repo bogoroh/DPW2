@@ -18,8 +18,6 @@ class MainHandler(webapp2.RequestHandler):
 
 		#Create an instance of link
 		link = Links(model.houseArr)
-		
-
 
 		if self.request.GET:
 			house = self.request.get('house')
