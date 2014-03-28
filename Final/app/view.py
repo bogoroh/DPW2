@@ -8,8 +8,7 @@ class Page(object):
 	</head>
 	<body>
 		<div id="content">
-		<header>
-		<h1> Game of Throne Songs </h1>
+			<h1> Game of Throne Songs </h1>
 '''   
 		self.__closer = '''
 		</div>
@@ -26,10 +25,13 @@ class Page(object):
 
 class Links(object):
 	def __init__(self,li):
-		self.__nav = ''
+		self.__nav = '''			<nav>'''
 		for i in li:
 			t = i['name']
-			self.__nav += '<a href="/?house='+t+'">'+t+'</a>'
+			self.__nav += '''
+				<a href="/?house='''+t+'''">'''+t+'''</a>'''
+		self.__nav += '''
+			</nav>'''
 
 	@property
 	def nav(self):
@@ -48,7 +50,8 @@ class Info(object):
 				h = i['head']
 				im = i['image']
 				image = n.lower()
-				self.__content = '''<div class="'''+n+'''"> 
+				self.__content = '''
+			<div class="'''+n+'''"> 
 				<h2> Name: </h2>
 				<p>''' + n + ''' </p>
 				<h2> Sigil: </h2>
@@ -62,7 +65,8 @@ class Info(object):
 				<h2> Head : </h2>
 				<p>''' + h + ''' </p>
 				<h2> Image : </h2>
-				<img src="http://rebeccacarroll.com/api/got/images/'''+ image + '''.jpg" alt="''' + image + '''">'''
+				<img src="http://rebeccacarroll.com/api/got/images/'''+ image + '''.jpg" alt="''' + image + '''">
+			</div>'''
 	@property
 	def content(self):
 	    return self.__content

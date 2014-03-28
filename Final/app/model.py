@@ -3,9 +3,11 @@ from xml.dom import minidom
 
 class Model(object):
 	def __init__(self):
+		# Parse the XML to start working with it
 		self.file = open("got.xml", 'r')
 		self.xml = minidom.parseString(self.file.read())
 		
+		#Array that holds all the information
 		self.houseArr = []
 
 		house = self.xml.getElementsByTagName("house")

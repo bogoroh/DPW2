@@ -15,16 +15,20 @@ class MainHandler(webapp2.RequestHandler):
 
 		# Let's create the page
 		page = Page()
+
+		#Create an instance of link
 		link = Links(model.houseArr)
-		self.response.write(page.header + link.nav + page.close)
+		
 
 
 		if self.request.GET:
 			house = self.request.get('house')
 
 			info = Info(house,model.houseArr)
-			self.response.write(info.content)
-		# Display nothing but the links
+			self.response.write(page.header + link.nav + info.content + page.close)
+		else:
+			# Display nothing but the links
+			self.response.write(page.header + link.nav + page.close)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
