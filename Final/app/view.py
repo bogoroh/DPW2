@@ -39,7 +39,7 @@ class Info(object):
 	#pass in the array and the house that was submitted to make content equal to that one
 	def __init__(self,house,li):
 		for i in li:
-			if house == i['name']
+			if house == i['name']:
 				n = i['name']
 				s = i['sigil']
 				m = i['motto']
@@ -62,4 +62,7 @@ class Info(object):
 				<h2> Head : </h2>
 				<p>''' + h + ''' </p>
 				<h2> Image : </h2>
-				<img src="http://rebeccacarroll.com/api/got/images/'''+ im + "''' alt="im">'''
+				<img src="http://rebeccacarroll.com/api/got/images/'''+ im + '''" alt="im">'''
+	@property
+	def content(self):
+	    return self.__content
