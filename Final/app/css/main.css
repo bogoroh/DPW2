@@ -1,3 +1,25 @@
 a {
-    margin-left: 10px;
+margin-left: 10px;
+}
+.Lannister {
+background-color:#FFA319
+}
+
+.Stark{
+background-color:#CECECE	
+}
+
+.Baratheon{
+background-color:#FFD119
+
+}
+.Greyjoy {
+background-color:#FFDF5E
+}
+.Targaryen{
+background-color:#800000
+}
+
+.tully{
+background-color:#0066CC
 }
